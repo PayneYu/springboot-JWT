@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.payne.user.mapper.UserMapper">
+    <insert id="save" parameterType="com.payne.user.model.User">
+        INSERT INTO t_user(name,city_id,sex)
+        VALUES
+        (
+        #{name},#{cityId},#{sex}
+        )
+    </insert>
+
+    <select id="get" parameterType="long" resultType="com.payne.user.model.User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.payne.user.model.User">
+        select * from t_user
+    </select>
+</mapper>
